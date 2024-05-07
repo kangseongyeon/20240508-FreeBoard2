@@ -53,7 +53,6 @@ public class MainController extends Print {
 //			case MEMBER:
 //				view = member();
 //				break;
-			//
 			default:
 				break;
 			}
