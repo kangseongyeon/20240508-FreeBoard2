@@ -1,0 +1,22 @@
+--------- BOOK ---------    // BOOK에 대한 정보를 담는 테이블
+BOOK_NO			NUMBER
+TITLE			VARCHAR2	50
+CONTENT			VARCHAR2 	2000
+PUBDATE			DATE	
+
+
+--------- BOOK_HOLD ---------	// 도서관이 가지고 있는 책
+HOLD_NO 		NUMBER 
+BOOK_NO			NUMBER
+
+--------- BOOK_LENT ---------	// 도서관에서 책을 빌렸을 때 정보
+HOLD_NO			NUMBER
+MEMBE_NO		NUMBER
+SEQ_NO			NUMBER
+
+
+-- 
+도서번호 부여를 기준으로 빌림
+누가 빌렸는지 알기 위해 MEMBE_NO 값을 넣어줌
+SEQ_NO : 반납을 했는지 여부
+데이터를 누적해서 모으기 위해서는 INSERT로 처리해야 함 => 테이블로 따로 빠져야 함
