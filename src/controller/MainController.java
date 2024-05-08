@@ -12,7 +12,7 @@ import util.View;
 import view.Print;
 import vo.FreeVo;
 import vo.MemberVo;
-
+//
 public class MainController extends Print {
 	
 	static public Map<String, Object> sessionStorage = new HashMap<>();
