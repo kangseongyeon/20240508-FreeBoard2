@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import util.JDBCUtil;
+import vo.MemberVo;
 
 public class MemberDao {
 	private static MemberDao instance;
@@ -21,14 +22,14 @@ public class MemberDao {
 	
 	JDBCUtil jdbc = JDBCUtil.getInstance();
 	
-	public Map<String, Object> login(List<Object> param) {
+	public MemberVo login (List<Object> param) {
 		String sql = "SELECT *\r\n" + 
 					 "FROM JAVA_MEMBER\r\n" + 
 					 "WHERE ID = ?\r\n" + 
 					 "AND PASS = ?\r\n" + 
 					 "AND DELYN = 'N'\r\n" + 
 					 "AND ROLE = ?";
-		return jdbc.selectOne(sql, param);
+		return jdbc.selectOne(sql, param, MemberVo.class);
 		
 	}
 }

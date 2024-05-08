@@ -1,10 +1,10 @@
 package service;
 
 import java.util.List;
-import java.util.Map;
 
 import controller.MainController;
 import dao.MemberDao;
+import vo.MemberVo;
 
 public class MemberService {
 	private static MemberService instance;
@@ -23,7 +23,7 @@ public class MemberService {
 	MemberDao memberDao = MemberDao.getInstance();
 	
 	public boolean login(List<Object> param, int role) {
-		Map<String, Object> member = memberDao.login(param);
+		MemberVo member = memberDao.login(param);
 		
 		// 로그인 실패
 		if (member == null) {
